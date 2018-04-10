@@ -15,7 +15,7 @@ public class Games {
     private static Connection connect() {
         try {
             return DriverManager.getConnection(
-                    "jdbc:postgresql:main", "basecamp", "pgpass");
+                    "jdbc:postgresql:siteUsers", "basecamp", "pgpass");
         }
         catch (Exception e) {
             e.printStackTrace();
