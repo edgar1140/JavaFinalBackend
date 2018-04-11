@@ -14,7 +14,7 @@ public class Teams {
     private static Connection connect() {
         try {
             return DriverManager.getConnection(
-                    "jdbc:postgresql:siteUsers", "basecamp", "pgpass");
+                    "jdbc:postgresql:main", "basecamp", "pgpass");
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

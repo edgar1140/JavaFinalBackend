@@ -151,3 +151,18 @@ INSERT INTO games (home_id, home_score, away_id, away_score) VALUES
 (27, 3, 32, 2),
 (20, 2, 29, 1),
 (31, 3, 28, 0);
+
+CREATE VIEW game_summaries AS
+SELECT
+    g.id AS game_id,
+    home_team.id AS home_id,
+    home_team.name AS home_team,
+    g.home_score AS home_score ,
+    home_team.img_url AS home_img_url,
+    away_team.id AS away_id ,
+    away_team.name AS away_team ,
+    g.away_score AS away_score ,
+    away_team.img_url AS away_img_url
+FROM games g
+JOIN teams home_team ON home_team.id = g.home_id
+JOIN teams away_team ON away_team.id = g.away_id;
